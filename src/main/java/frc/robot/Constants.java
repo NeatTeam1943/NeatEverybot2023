@@ -8,4 +8,11 @@ public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
   }
+
+  public static class ChassisConstants {
+    public static final int kRightRear = 0;
+    public static final int kLeftRear = 1;
+    public static final int kRightFront = 2;
+    public static final int kLeftFront = 3;
+  }
 }
