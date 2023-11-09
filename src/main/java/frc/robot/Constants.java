@@ -11,5 +11,8 @@ public final class Constants {
 
   public static class IntakeConstants{
     public static final int kIntakeMotor = 0;
+    
+    public static final int kEjectSpeed = 0;
+    public static final int kEatSpeed = 0;
   }
 }
