@@ -19,27 +19,35 @@ public class Arm extends SubsystemBase {
     RESET
   }
 
+  private void set(double speed) {
+    m_armMotor.set(speed);
+  }
+
   public void toggleState(ArmState state) {
     switch (state) {
       case HUMAN_PLAYER:
         this.set(ArmConstants.kHumanPlayerSpeed);
         break;
+
       case TOP:
         this.set(ArmConstants.kTopSpeed);
         break;
+
       case MID:
         this.set(ArmConstants.kMidSpeed);
         break;
+
       case BOTTOM:
         this.set(ArmConstants.kBottomSpeed);
         break;
+
       case RESET:
+        this.set(ArmConstants.kResetToDefault);
+        break;
+
+      default:
         this.set(0);
         break;
     }
-  }
-
-  private void set(double speed) {
-    m_armMotor.set(speed);
   }
 }

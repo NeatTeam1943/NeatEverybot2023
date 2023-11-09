@@ -16,5 +16,7 @@ public final class Constants {
     public static final int kTopSpeed = 0;
     public static final int kMidSpeed = 0;
     public static final int kBottomSpeed = 0;
+
+    public static final int kResetToDefault = 0;
   }
 }
