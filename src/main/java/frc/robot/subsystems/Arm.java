@@ -1,17 +1,45 @@
-// Copyright (c) FIRST and other WPILib contributors.
-// Open Source Software; you can modify and/or share it under the terms of
-// the WPILib BSD license file in the root directory of this project.
-
 package frc.robot.subsystems;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants.ArmConstants;
 
 public class Arm extends SubsystemBase {
-  /** Creates a new Arm. */
-  public Arm() {}
+  private Spark m_armMotor;
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
+  public Arm() {
+    m_armMotor = new Spark(ArmConstants.kArmMotor);
+  }
+
+  public enum ArmState {
+    HUMAN_PLAYER,
+    TOP,
+    MID,
+    BOTTOM,
+    RESET
+  }
+
+  public void toggleState(ArmState state) {
+    switch (state) {
+      case HUMAN_PLAYER:
+        this.set(ArmConstants.kHumanPlayerSpeed);
+        break;
+      case TOP:
+        this.set(ArmConstants.kTopSpeed);
+        break;
+      case MID:
+        this.set(ArmConstants.kMidSpeed);
+        break;
+      case BOTTOM:
+        this.set(ArmConstants.kBottomSpeed);
+        break;
+      case RESET:
+        this.set(0);
+        break;
+    }
+  }
+
+  private void set(double speed) {
+    m_armMotor.set(speed);
   }
 }
