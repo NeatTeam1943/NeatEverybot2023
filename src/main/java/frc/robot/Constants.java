@@ -11,12 +11,5 @@ public final class Constants {
 
   public static class ArmConstants{
     public static final int kArmMotor = 0;
-
-    public static final int kHumanPlayerSpeed = 0;
-    public static final int kTopSpeed = 0;
-    public static final int kMidSpeed = 0;
-    public static final int kBottomSpeed = 0;
-
-    public static final int kResetToDefault = 0;
   }
 }
