@@ -9,7 +9,12 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
 
-  public static class ArmConstants{
+  public static class ArmConstants {
     public static final int kArmMotor = 0;
+    
+    public static final int kDistanceToLowGrid = 10;
+    public static final int kDistanceToMidGrid = 100;
+    public static final int kDistanceToHumanGrid = 500;
+    public static final int kDistanceToTopGrid = 1000;
   }
 }
