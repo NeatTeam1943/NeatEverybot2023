@@ -16,4 +16,12 @@ public class Arm extends SubsystemBase {
   public void set(double speed) {
     m_armMotor.set(speed);
   }
+
+  public SparkMaxPIDController getPidController() {
+    return m_armMotor.getPIDController();
+  }
+
+  public RelativeEncoder getEncoder() {
+    return m_armMotor.getEncoder();
+  }
 }
