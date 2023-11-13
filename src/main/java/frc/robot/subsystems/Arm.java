@@ -27,11 +27,21 @@ public class Arm extends SubsystemBase {
     m_armMotor.set(speed);
   }
 
-  public SparkMaxPIDController getPidController() {
-    return m_armMotor.getPIDController();
+  public RelativeEncoder getEncoder() {
+    return m_armMotor.getEncoder(Type.kHallSensor, ArmConstants.kCountsPerRev);
   }
 
-  public RelativeEncoder getEncoder() {
-    return m_armMotor.getEncoder(Type.kHallSensor, 42);
+  public double getMetersFromRevs() {
+    double distancePerRevolution = Math.PI * ArmConstants.kWheelDiameter / ArmConstants.kGearRatio;
+
+    return distancePerRevolution * getEncoder().getPosition();
+  }
+
+  public void resetEncoder() {
+    m_armMotor.getEncoder().setPosition(0);
+  }
+
+  public CANSparkMax getMotor() {
+    return m_armMotor;
   }
 }
