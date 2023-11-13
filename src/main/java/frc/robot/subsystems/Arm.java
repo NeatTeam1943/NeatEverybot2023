@@ -2,7 +2,6 @@ package frc.robot.subsystems;
 
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.RelativeEncoder;
-import com.revrobotics.SparkMaxPIDController;
 import com.revrobotics.CANSparkMaxLowLevel.MotorType;
 import com.revrobotics.SparkMaxRelativeEncoder.Type;
 
@@ -16,11 +15,22 @@ public class Arm extends SubsystemBase {
     m_armMotor = new CANSparkMax(ArmConstants.kArmMotor, MotorType.kBrushless);
   }
 
-  public enum ArmState{
-    HUMAN,
-    TOP,
-    MID,
-    LOW
+  public enum ArmState {
+    HUMAN(ArmConstants.kDistanceToHumanGrid),
+    TOP(ArmConstants.kDistanceToTopGrid),
+    MID(ArmConstants.kDistanceToMidGrid),
+    LOW(ArmConstants.kDistanceToLowGrid),
+    RESET(ArmConstants.kResetDistance);
+
+    private final double setPoint;
+
+    ArmState(double setPoint) {
+      this.setPoint = setPoint;
+    }
+
+    public double getSetPoint() {
+      return setPoint;
+    }
   }
 
   public void set(double speed) {
