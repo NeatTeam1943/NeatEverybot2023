@@ -13,7 +13,10 @@ public class RobotContainer {
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
+  private final Chassis m_chassis;
+
   public RobotContainer() {
+    m_chassis = new Chassis();
     configureBindings();
   }
 
