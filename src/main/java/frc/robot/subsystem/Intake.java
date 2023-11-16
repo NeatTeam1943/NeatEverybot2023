@@ -11,15 +11,23 @@ public class Intake extends SubsystemBase {
     m_intakeMotor = new Spark(IntakeConstants.kIntakeMotor);
   }
 
-  public void eject(){
-    m_intakeMotor.set(IntakeConstants.kEjectSpeed);
+  public enum IntakeState{
+    EJECT(IntakeConstants.kEjectSpeed),
+    EAT(IntakeConstants.kEatSpeed),
+    RESET(0);
+
+    private final int m_speed;
+
+    IntakeState(int speed){
+      m_speed = speed;  
+    }
+
+    public int getSpeed(){
+      return m_speed;
+    }
   }
 
-  public void eat(){
-    m_intakeMotor.set(IntakeConstants.kEatSpeed);
-  }
-
-  public void reset(){
-    m_intakeMotor.set(0);
+  public void set(int speed){
+    m_intakeMotor.set(speed);
   }
 }
