@@ -9,10 +9,10 @@ public final class Constants {
     public static final int kDriverControllerPort = 0;
   }
 
-  public static class ChassisConstants {
-    public static final int kRightRear = 0;
-    public static final int kLeftRear = 1;
-    public static final int kRightFront = 2;
-    public static final int kLeftFront = 3;
+  public static class IntakeConstants{
+    public static final int kIntakeMotor = 0;
+    
+    public static final int kEjectSpeed = 0;
+    public static final int kEatSpeed = 0;
   }
 }
