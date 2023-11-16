@@ -5,9 +5,10 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
+import frc.robot.subsystems.Chassis;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.RunCommand;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import edu.wpi.first.wpilibj2.command.button.Trigger;
 
 public class RobotContainer {
   private final CommandXboxController m_driverController =
@@ -17,6 +18,9 @@ public class RobotContainer {
 
   public RobotContainer() {
     m_chassis = new Chassis();
+
+    m_chassis.setDefaultCommand(new RunCommand(() -> m_chassis.move(m_driverController), m_chassis));
+    
     configureBindings();
   }
 
