@@ -2,8 +2,8 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import frc.robot.subsystem.Intake;
-import frc.robot.subsystem.Intake.IntakeState;
+import frc.robot.subsystems.Intake;
+import frc.robot.subsystems.Intake.IntakeState;
 
 public class IntakeHandler extends CommandBase {
   private Intake m_intake; 
