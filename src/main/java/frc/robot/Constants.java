@@ -28,4 +28,18 @@ public final class Constants {
 
     public static final int kCountsPerRev = 42;
   }
+
+  public static class ChassisConstants{
+    public static final int kRightRear = 0;
+    public static final int kLeftRear = 0;
+    public static final int kRightFront = 0;
+    public static final int kLeftFront = 0;
+  }
+
+  public static class IntakeConstants{
+    public static final int kIntakeMotor = 0;
+    public static final int kEjectSpeed = 0;
+    public static final int kEatSpeed = 0;
+  }
+  
 }
